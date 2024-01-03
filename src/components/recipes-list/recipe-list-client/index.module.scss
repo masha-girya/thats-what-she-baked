@@ -43,6 +43,12 @@
 
     @include mixins.mediaMobile {
       max-width: 100%;
+      width: 100%;
+    }
+
+    &__loader {
+      margin-top: 100px;
+      width: 100%;
     }
   }
 }

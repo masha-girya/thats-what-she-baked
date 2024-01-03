@@ -12,7 +12,7 @@ export const RecipeCard = ({ recipe }: IProps) => {
   const { title, slug, mainImage } = recipe;
 
   return (
-    <Link href={`/${ROUTES.recipes}/${slug}`}  className={styles.recipeCard}>
+    <Link href={`/${ROUTES.recipes}/${slug}`} className={styles.recipeCard}>
       <div className={styles.recipeCard__background}>
         <img
           className={styles.recipeCard__background__img}

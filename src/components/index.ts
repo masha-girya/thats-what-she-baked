@@ -6,6 +6,7 @@ export * from "./header";
 export * from "./icons";
 export * from "./ingredients-list";
 export * from "./nav";
+export * from "./loading-page";
 export * from "./recipe-card";
 export * from "./recipe-header";
 export * from "./recipe-step";

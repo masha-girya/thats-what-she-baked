@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import classNames from "classnames";
 import { Search } from "@/components/search";
 import { RecipeCard } from "@/components/recipe-card";
 import styles from "./index.module.scss";
-import classNames from "classnames";
 
 interface IProps {
   recipes: {
