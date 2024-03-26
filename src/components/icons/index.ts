@@ -13,6 +13,7 @@ export * from './NextIcon';
 export * from './OvenBakedIcon';
 export * from './OvenIcon';
 export * from './PinterestIcon';
+export * from './PostArrowIcon';
 export * from './PrevIcon';
 export * from './SearchIcon';
 export * from './TikTokIcon';

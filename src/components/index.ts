@@ -10,6 +10,7 @@ export * from './header';
 export * from './icons';
 export * from './image-loader';
 export * from './inner-link';
+export * from './instagram-post';
 export * from './ingredients-list';
 export * from './link-button';
 export * from './loading-page';

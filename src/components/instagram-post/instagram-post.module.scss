@@ -1,0 +1,99 @@
+@use 'src/styles/variables.scss' as var;
+@use 'src/styles/mixins.scss';
+
+.instaPost {
+  margin: 50px 0;
+
+  display: flex;
+  gap: 50px;
+
+  @include mixins.mediaTablet {
+    gap: 20px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    flex-direction: column;
+  }
+
+  &__post {
+    min-width: 328px;
+
+    @media only screen and (max-width: 550px) {
+      order: 2;
+    }
+  }
+
+  &__textBox {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    @media only screen and (max-width: 550px) {
+      order: 1;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 800;
+    font-style: italic;
+    color: var.$main-color-tomato;
+
+    max-width: 500px;
+    transform: rotate(-5deg);
+
+    @include mixins.mediaTablet {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    @media only screen and (max-width: 550px) {
+      transform: rotate(0);
+
+      text-align: center;
+    }
+  }
+
+  &__arrow {
+    @include mixins.square(200px);
+
+    animation: arrow 2s linear infinite;
+
+    @include mixins.mediaTablet {
+      @include mixins.square(130px);
+    }
+
+    @media only screen and (max-width: 550px) {
+      transform: rotate(0);
+
+      position: absolute;
+      right: -20px;
+      transform: rotate(125deg) scaleX(-1);
+      top: -10px;
+
+      animation: none;
+    }
+
+    @include mixins.mediaMobile {
+      top: 5px;
+      right: -40px;
+      transform: rotate(130deg) scaleX(-1);
+    }
+  }
+}
+
+@keyframes arrow {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

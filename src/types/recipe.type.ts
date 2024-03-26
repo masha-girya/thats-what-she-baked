@@ -13,11 +13,10 @@ export interface IRecipe {
   amount: string;
   recipeSteps: IRecipeStep[];
   totalIngredients: string[];
-  // ingredients: IIngredients;
-  // steps: ISteps;
   lastImage: string;
   tips: ITipsRecipe[];
   totalFavs: number;
+  instaPostLink?: string;
 }
 
 export interface IRecipeStep {
@@ -29,9 +28,6 @@ export interface IRecipeStep {
 export interface IRecipeCard
   extends Pick<IRecipe, 'title' | 'slug' | 'mainImage'> {}
 
-// export interface ITipsRecipe {
-//   [key: string]: string;
-// }
 
 export interface ITipsRecipe {
   title: string;

@@ -1,19 +1,13 @@
 import {
   FacebookIcon,
-  LinkedInIcon,
   TelegramIcon,
   TwitterIcon,
+  BuyMeACoffeeIcon
 } from '@/components/icons';
-import { BuyMeACoffeeIcon } from '@/components/icons/BuyMeACoffeeIcon';
 
 export const ARTICLES_LIMIT = 6;
 
 export const SHARE_ICONS = [
-  {
-    icon: LinkedInIcon,
-    link: 'https://www.linkedin.com/sharing/share-offsite/?url=',
-    title: 'LinkedIn',
-  },
   {
     icon: TwitterIcon,
     link: 'https://twitter.com/intent/tweet?text=',

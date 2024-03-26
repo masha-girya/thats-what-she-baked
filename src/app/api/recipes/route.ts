@@ -50,7 +50,8 @@ export async function GET(req: Request) {
 }
 
 // export async function POST() {
-//   const newData = recipes.data[3];
+//   const newData = recipes.data[0];
+
 //   const recipesCollection = collection(db, 'recipes');
 
 //   addDoc(recipesCollection, { ...newData })

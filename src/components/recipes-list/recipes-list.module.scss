@@ -25,6 +25,10 @@
     @include mixins.mediaTablet {
       padding-top: 70px;
     }
+
+    @include mixins.mediaMobile {
+      padding-top: 10px;
+    }
   }
 
   &__text {

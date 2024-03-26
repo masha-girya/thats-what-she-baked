@@ -10,6 +10,7 @@ import {
   RecipesList,
   ShareSocials,
   TitleBox,
+  InstagramPost,
 } from '@/components';
 import { ERROR_TEXT } from '@/constants';
 import { getRecipeBySlug } from '@/lib';
@@ -22,7 +23,15 @@ const RecipePage = async ({ params }: any) => {
     return <ServerErrorPlug text={ERROR_TEXT.recipeInner} />;
   }
 
-  const { recipeSteps, bakingTime, formSize, amount, tips, lastImage } = recipe;
+  const {
+    recipeSteps,
+    bakingTime,
+    formSize,
+    amount,
+    tips,
+    lastImage,
+    instaPostLink,
+  } = recipe;
 
   const stickerInfo = [
     {
@@ -63,10 +72,9 @@ const RecipePage = async ({ params }: any) => {
             ))}
           </RecipeSticker>
 
-          <RecipeStep
-            recipeSteps={recipeSteps}
-            lastImage={lastImage}
-          />
+          <RecipeStep recipeSteps={recipeSteps} lastImage={lastImage} />
+
+          {instaPostLink && <InstagramPost postLink={instaPostLink} />}
 
           <RecipeSticker>
             <p className={styles.recipe__shareText}>

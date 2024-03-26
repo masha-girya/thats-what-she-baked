@@ -14,7 +14,7 @@ export const SOCIALS = [
   {
     name: 'TikTok',
     icon: TikTokIcon,
-    link: 'https://www.tiktok.com/@thats_what_she_baked?_t=8ian9tfWHor',
+    link: 'https://www.tiktok.com/@thats.what.she.baked?_t=8ian9tfWHor',
   },
   // {
   //   name: 'LinkedIn',

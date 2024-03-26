@@ -17,6 +17,7 @@ interface IProps {
 export const TitleBox = (props: IProps) => {
   const { slug, totalFavs } = props;
   const [isInFavs, setIsInFavs] = useState(false);
+  const [isSetting, setIsSetting] = useState(false);
   const { favoritesSlugs } = useAppSelector((state) => state.favoritesReducer);
   const dispatch = useAppDispatch();
 
@@ -26,7 +27,18 @@ export const TitleBox = (props: IProps) => {
     );
   }, [slug, favoritesSlugs]);
 
+  useEffect(() => {
+    if (isSetting) {
+      const timeout = setTimeout(() => setIsSetting(false), 500);
+
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, [isSetting]);
+
   const setRecipeToFavs = useCallback(() => {
+    setIsSetting(true);
     if (isInFavs) {
       dispatch(favoritesAction.removeFromFavorites(slug));
       addRecipeToFavs(slug, totalFavs - 1 || 0);
@@ -37,17 +49,23 @@ export const TitleBox = (props: IProps) => {
   }, [slug, totalFavs, isInFavs]);
 
   return (
-    <div className={styles.favsBox}>
+    <div
+      className={classNames(styles.favsBox, {
+        [styles.favsBox_active]: isInFavs,
+      })}
+    >
       <button
         type="button"
         name={BUTTONS_TEXT.favsRecipes}
-        className={classNames(styles.favsBox__button, {
-          [styles.favsBox__button_active]: isInFavs,
-        })}
+        className={styles.favsBox__button}
         onClick={setRecipeToFavs}
         aria-label={BUTTONS_TEXT.favsRecipes}
       >
-        <HeartIcon />
+        <HeartIcon
+          className={classNames(styles.favsBox__icon, {
+            [styles.favsBox__icon_setting]: isSetting,
+          })}
+        />
       </button>
 
       <p className={styles.favsBox__info}>

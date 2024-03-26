@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { Article, Socials } from '@/components';
 import { TextContent } from '@/components/article-text-content';
@@ -23,7 +25,9 @@ const AboutMe = () => {
           <div className={styles.about__intro__text}>
             <h1 className={styles.about__intro__text__title}>{intro.title}</h1>
             {intro.content.map((text) => (
-              <p key={text} className={styles.about__intro__text__desc}>{text}</p>
+              <p key={text} className={styles.about__intro__text__desc}>
+                {text}
+              </p>
             ))}
           </div>
         </article>
@@ -41,7 +45,9 @@ const AboutMe = () => {
                     </p>
                   ) : (
                     info.text.map((text) => (
-                      <p key={text} className={styles.textImagePair__text}>{text}</p>
+                      <p key={text} className={styles.textImagePair__text}>
+                        {text}
+                      </p>
                     ))
                   )}
                 </div>
